@@ -1,0 +1,12 @@
+#!/bin/bash
+g++ main.cpp                     \
+Generate/generate.cpp            \
+GlutWindow/glutWindow.cpp        \
+globals.cpp                      \
+_Interact/interact.cpp           \
+-o bin                           \
+-I Generate                      \
+-I _Interact                     \
+-I GlutWindow                    \
+-I ./                            \
+-std=c++17 -O3 -Wall -Wextra -L/usr/lib -ljpeg -lGL -lGLU -lglut -std=c++17
