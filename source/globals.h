@@ -16,8 +16,8 @@ struct tile {
 };
 
 const int MAX = 1000;
-const int SZ = 20;
-const int WSZ = 600;
+const double SZ = 20.0;
+const int WSZ = 700;
 const int BEGIN = 500;
 
 const double INF = 1e18;
@@ -37,9 +37,19 @@ extern int FSZ;
 extern int PLAYERS;
 extern int WHO;
 
+extern int MOD;
+
+const int WORLD = 0;
+const int CITY  = 1;
+const int BUY   = 2;
+const int MOVE  = 3;
+
 const double FORESTY = 0.1;
 
 double getx(int i, int j);
 double gety(int i, int j);
+
+extern std::vector<std::pair<int, int> > tiles;
+extern std::vector<std::vector<double> > CL;
 
 #endif

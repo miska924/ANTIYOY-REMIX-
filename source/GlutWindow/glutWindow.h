@@ -6,4 +6,4 @@ void Draw();
 void Timer(int value);
 void Initialize();
 
-#endif
+#endif // GLUTWINDOW

@@ -16,8 +16,8 @@ double chance() {
 }
 
 void updateXY(int i, int j) {
-    double x = sqrtl(3) * i;
-    double y = 2.0 * j + i;
+    double x = getx(i, j);
+    double y = gety(i, j);
     double r0 = 2.0 / sqrtl(3);
 
     xl = min(xl, x - r0);
@@ -32,13 +32,13 @@ void makeUp(int i, int j) {
     if (chance() < FORESTY) {
         field[i][j].item = TREE;
     } else {
-        field[i][j].item  = EMPTY;
+        field[i][j].item = EMPTY;
     }
 }
 
 void genSkelet(vector<pair<int, int> > &t, int need) {
     int i = BEGIN, j = BEGIN;
-    while (t.size() < need) {
+    while (int(t.size()) < need) {
         if (!exist(i, j)) {
             makeUp(i, j);
             t.push_back(pair<int, int>{i, j});
@@ -56,7 +56,7 @@ void genSkelet(vector<pair<int, int> > &t, int need) {
 
 void genMuscul(vector<pair<int, int> > t, int need) {
     random_shuffle(t.begin(), t.end());
-    for (int i = 0; i < t.size(); ++i) {
+    for (int i = 0; i < int(t.size()); ++i) {
         int x = t[i].first;
         int y = t[i].second;
         for (int dx = -1; dx <= 1; ++dx) {
@@ -72,6 +72,9 @@ void genMuscul(vector<pair<int, int> > t, int need) {
 }
 
 void paint(pair<int, int> begin, int color, int need) {
+    if (!exist(begin.first, begin.second)) {
+        return;
+    }
     int i = begin.first, j = begin.second;
     for (int cur = 0, p = 0; cur < need && p < need * 2; ++cur, ++p) {
         field[i][j].color = color;
@@ -91,6 +94,10 @@ void paint(pair<int, int> begin, int color, int need) {
 }
 
 void GenerateField() {
+    SCALE = 1;
+    X0 = Y0 = 0;
+    MOD = WORLD;
+    WHO = 1;
     for (int i = 0; i < MAX; ++i) {
         for (int j = 0; j < MAX; ++j) {
             field[i][j].color = VOID;
@@ -99,16 +106,15 @@ void GenerateField() {
     vector<pair<int, int> > t;
     genSkelet(t, FSZ / 2);
     genMuscul(t, FSZ);
+    tiles = t;
 
     double xlen = xr - xl;
     double ylen = yr - yl;
     SCALE = SZ * 0.8 / max(xlen, ylen);
-    X0 = (xl + xr) / 2 - SZ / 2 / SCALE;
-    Y0 = (yl + yr) / 2 - SZ / 2 / SCALE;
-
+    X0 = (xl + xr) / 2 - SZ / 2.0 / SCALE;
+    Y0 = (yl + yr) / 2 - SZ / 2.0 / SCALE;
     cerr << "WORLD IS GENERATED" << endl;
-
-    int cnt = FSZ / PLAYERS / 20;
+    int cnt = max(1, FSZ / PLAYERS / 20);
 
     vector<int> players(PLAYERS);
     for (int i = 0; i < PLAYERS; ++i) {

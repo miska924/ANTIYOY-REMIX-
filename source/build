@@ -1,12 +1,30 @@
 #!/bin/bash
-g++ main.cpp                     \
-Generate/generate.cpp            \
-GlutWindow/glutWindow.cpp        \
-globals.cpp                      \
-_Interact/interact.cpp           \
--o bin                           \
--I Generate                      \
--I _Interact                     \
--I GlutWindow                    \
--I ./                            \
--std=c++17 -O3 -Wall -Wextra -L/usr/lib -ljpeg -lGL -lGLU -lglut -std=c++17
+
+g++ main.cpp                        \
+\
+globals.cpp                         \
+Generate/generate.cpp               \
+GlutWindow/glutWindow.cpp           \
+World/world.cpp                     \
+City/city.cpp                       \
+Buy/buy.cpp                         \
+Move/move.cpp                       \
+_Interact/interact.cpp              \
+_Parts/Field/field.cpp              \
+_Parts/Buttons/buttons.cpp          \
+_Parts/Info/info.cpp                \
+\
+-o bin                              \
+\
+-I ./                               \
+-I Generate/                        \
+-I GlutWindow/                      \
+-I _Interact/                       \
+-I World/                           \
+-I City/                            \
+-I Buy/                             \
+-I Move/                            \
+-I _Part/Info/                      \
+-I _Parts/Field/                    \
+-I _Part/Buttons/                   \
+-std=c++17 -O3 -Wall -Wextra -L/usr/lib -ljpeg -lGL -lGLU -lglut

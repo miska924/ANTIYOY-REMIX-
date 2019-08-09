@@ -2,7 +2,6 @@
 #include <GL/glut.h>
 #include "globals.h"
 #include "interact.h"
-#include "glutWindow.h"
 
 using namespace std;
 
