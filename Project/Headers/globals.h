@@ -4,19 +4,20 @@
 const int VOID     =-1;
 
 const int EMPTY    = 0;
-const int JUMPING  = 1;
-const int STANDING = 1;
+const int PERSON   = 1;
 const int TOWER    = 2;
 const int CITADEL  = 3;
 const int TREE     = 4;
 
 struct tile {
     int color, item;
-    int state = 0;  
+    int state = 0;
+    int mark = 0; 
 };
 
 const int MAX = 1000;
 const double SZ = 20.0;
+const double BORDER = 0.01;
 const int WSZ = 700;
 const int BEGIN = 500;
 
@@ -36,6 +37,7 @@ extern double Y0;
 extern int FSZ;
 extern int PLAYERS;
 extern int WHO;
+extern int TMP;
 
 extern int MOD;
 
@@ -51,5 +53,8 @@ double gety(int i, int j);
 
 extern std::vector<std::pair<int, int> > tiles;
 extern std::vector<std::vector<double> > CL;
+
+extern int DEBUGX;
+extern int DEBUGY;
 
 #endif

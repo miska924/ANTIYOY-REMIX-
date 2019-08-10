@@ -14,6 +14,8 @@ int main(int argc, char** argv) {
     cin >> FSZ >> PLAYERS;
 
     GenerateField();
+    
+    WHO = 1;
 
     GlutWindow(argc, argv);
 

@@ -1,0 +1,2 @@
+void GenerateField();
+void refresh();

@@ -1,6 +1,6 @@
 #ifndef _BUTTON
 #define _BUTTON
 
-void endTurn();
+void drawButtons();
 
 #endif // _BUTTON

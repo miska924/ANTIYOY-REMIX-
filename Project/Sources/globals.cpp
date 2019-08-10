@@ -15,8 +15,13 @@ int FSZ;
 int PLAYERS;
 int WHO;
 int MOD;
+
+int DEBUGX, DEBUGY;
+
+int TMP = 0;
+
 vector<pair<int, int> > tiles;
-vector<vector<double> > CL = {{1.0, 0.9, 0.6},
+vector<vector<double> > CL = {{0.7, 0.7, 0.7},//{{1.0, 0.9, 0.6},
                           {1.0, 0.0, 0.0},
                           {0.0, 0.0, 1.0},
                           {0.0, 1.0, 0.0},

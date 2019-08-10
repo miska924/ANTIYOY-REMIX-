@@ -6,10 +6,7 @@ using namespace std;
 #include "globals.h"
 #include "glutWindow.h"
 #include "interact.h"
-#include "world.h"
-#include "city.h"
-#include "buy.h"
-#include "move.h"
+#include "field.h"
 
 void GlutWindow(int argc, char** argv) {
     glutInit(&argc, argv);
@@ -33,13 +30,7 @@ void Draw() {
     glClear(GL_COLOR_BUFFER_BIT|GL_DEPTH_BUFFER_BIT);
     glLoadIdentity();
 
-    if      (MOD == WORLD) drawWorld();
-
-    else if (MOD ==  CITY) drawCity();
-
-    else if (MOD ==   BUY) drawBuy();
-
-    else if (MOD ==  MOVE) drawMove();
+    drawField();
     
     glFlush();
     glutSwapBuffers();
