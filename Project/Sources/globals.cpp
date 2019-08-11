@@ -20,6 +20,10 @@ int DEBUGX, DEBUGY;
 
 int TMP = 0;
 
+int CURBUY;
+int CURMOVEI;
+int CURMOVEJ;
+
 vector<pair<int, int> > tiles;
 vector<vector<double> > CL = {{0.7, 0.7, 0.7},//{{1.0, 0.9, 0.6},
                           {1.0, 0.0, 0.0},
@@ -30,7 +34,7 @@ vector<vector<double> > CL = {{0.7, 0.7, 0.7},//{{1.0, 0.9, 0.6},
                           {1.0, 0.0, 1.0}};
 
 double getx(int i, int j) {
-    return (sqrt(3) * i - X0) * SCALE;
+    return (sqrtl(3) * i - X0) * SCALE;
 }
 
 double gety(int i, int j) {
@@ -49,4 +53,12 @@ int button() {
         }
         return ans;
     }
+}
+
+double ang(int x) {
+    return double(x) * M_PI / 180;
+}
+
+double sqr(double x) {
+    return x * x;
 }

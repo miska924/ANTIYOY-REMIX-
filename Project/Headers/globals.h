@@ -4,10 +4,15 @@
 const int VOID     =-1;
 
 const int EMPTY    = 0;
-const int PERSON   = 1;
+const int FARM     = 1;
 const int TOWER    = 2;
 const int CITADEL  = 3;
 const int TREE     = 4;
+
+const int P1 = 5;
+const int P2 = 6;
+const int P3 = 7;
+const int P4 = 8; 
 
 struct tile {
     int color, item;
@@ -61,5 +66,13 @@ const int NEXT_TURN = 9;
 const int BUTTONS = 10;
 extern tile buttons[BUTTONS];
 int button();
+
+extern int CURBUY;
+extern int CURMOVEI;
+extern int CURMOVEJ;
+
+double ang(int x);
+
+double sqr(double x);
 
 #endif

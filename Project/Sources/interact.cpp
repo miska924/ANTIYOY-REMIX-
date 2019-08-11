@@ -5,10 +5,6 @@
 
 using namespace std;
 
-double sqr(double x) {
-    return x * x;
-}
-
 double ms_dist(int x, int y) {
     return sqrt(sqr(getx(x, y) - MSX) + sqr(gety(x, y) - MSY));
 }
@@ -57,6 +53,10 @@ void MousePressed(int but, int state, int x, int y) {
     if (but == 0 && state == GLUT_DOWN) {
         if (button() == NEXT_TURN) {
             WHO = WHO % PLAYERS + 1;
+            MODE = WORLD;
+        } else if (button() != VOID) {
+            MODE = BUY;
+            CURBUY = buttons[button()].item;
         }
     }
     glutSetWindowTitle("MousePressed");

@@ -35,6 +35,8 @@ void makeUp(int i, int j) {
     field[i][j].color = EMPTY;
     if (chance() < FORESTY) {
         field[i][j].item = TREE;
+    } else if (chance() < 0.5) {
+        field[i][j].item = rand() % 4 + 5;
     } else {
         field[i][j].item = EMPTY;
     }

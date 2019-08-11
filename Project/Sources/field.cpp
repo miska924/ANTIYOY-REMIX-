@@ -2,10 +2,7 @@
 #include <GL/glut.h>
 #include "globals.h"
 #include "field.h"
-
-double ang(int x) {
-    return double(x) * M_PI / 180;
-}
+#include "items.h"
 
 void drawTile(int i, int j) {
     double x = getx(i, j);
@@ -30,7 +27,7 @@ void drawTile(int i, int j) {
         glVertex2f(x - r0     * k * SCALE, y            );
     } glEnd();
 
-
+    drawItem(field[i][j].item, getx(i, j), gety(i, j), SCALE * k);
     // glColor4f(1,1,1,1);
     // glBegin(GL_POLYGON); {
     //     glVertex3f(getx(DEBUGX, DEBUGY) - r0 / 2 / 2 * k * SCALE, gety(DEBUGX, DEBUGY) - k / 2 * SCALE, 0.2);
