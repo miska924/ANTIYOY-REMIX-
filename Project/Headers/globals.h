@@ -16,9 +16,9 @@ struct tile {
 };
 
 const int MAX = 1000;
-const double SZ = 20.0;
+const double SZ = 40.0;
 const double BORDER = 0.01;
-const int WSZ = 700;
+const int WSZ = 900;
 const int BEGIN = 500;
 
 const double INF = 1e18;

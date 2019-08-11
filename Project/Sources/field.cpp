@@ -64,45 +64,51 @@ void drawTile(int i, int j) {
     //     } glEnd();
     // }
     
-    switch(field[i][j].item) {
-        case PERSON:
-            for (int i = 0; i < 360; i += 20) {
-                glColor4f(0, 0, 0, 0);
-                glBegin(GL_LINES); {
-                    glVertex3f(x + (k / 2) * SCALE * sin(ang(i    )),
-                               y + (k / 2) * SCALE * cos(ang(i    )), 0.1);
-                    glVertex3f(x + (k / 2) * SCALE * sin(ang(i + 20)),
-                               y + (k / 2) * SCALE * cos(ang(i + 20)), 0.1);
-                } glEnd();
-            }
-            break;
-        case CITADEL:
-            glColor4f(0, 0, 0, 0);
-            glBegin(GL_LINES); {
-                glVertex3f(x - k / 2 * SCALE, y - k / 2 * SCALE, 0.1);
-                glVertex3f(x - k / 2 * SCALE, y + k / 2 * SCALE, 0.1);
 
-                glVertex3f(x - k / 2 * SCALE, y + k / 2 * SCALE, 0.1);
-                glVertex3f(x + k / 2 * SCALE, y + k / 2 * SCALE, 0.1);
 
-                glVertex3f(x + k / 2 * SCALE, y + k / 2 * SCALE, 0.1);
-                glVertex3f(x + k / 2 * SCALE, y - k / 2 * SCALE, 0.1);
 
-                glVertex3f(x + k / 2 * SCALE, y - k / 2 * SCALE, 0.1);
-                glVertex3f(x - k / 2 * SCALE, y - k / 2 * SCALE, 0.1);
-            } glEnd();
-            break;
-        case 8:
-            glColor4f(0, 0, 0, 0);
-            glBegin(GL_LINES); {
-                glVertex3f(x - (k / 2) * SCALE, y - (k / 2) * SCALE, 0.1);
-                glVertex3f(x + (k / 2) * SCALE, y + (k / 2) * SCALE, 0.1);
 
-                glVertex3f(x - (k / 2) * SCALE, y + (k / 2) * SCALE, 0.1);
-                glVertex3f(x + (k / 2) * SCALE, y - (k / 2) * SCALE, 0.1);
-            } glEnd();
-            break;
-    }
+
+    
+    // switch(field[i][j].item) {
+    //     case PERSON:
+    //         for (int i = 0; i < 360; i += 20) {
+    //             glColor4f(0, 0, 0, 0);
+    //             glBegin(GL_LINES); {
+    //                 glVertex3f(x + (k / 2) * SCALE * sin(ang(i    )),
+    //                            y + (k / 2) * SCALE * cos(ang(i    )), 0.1);
+    //                 glVertex3f(x + (k / 2) * SCALE * sin(ang(i + 20)),
+    //                            y + (k / 2) * SCALE * cos(ang(i + 20)), 0.1);
+    //             } glEnd();
+    //         }
+    //         break;
+    //     case CITADEL:
+    //         glColor4f(0, 0, 0, 0);
+    //         glBegin(GL_LINES); {
+    //             glVertex3f(x - k / 2 * SCALE, y - k / 2 * SCALE, 0.1);
+    //             glVertex3f(x - k / 2 * SCALE, y + k / 2 * SCALE, 0.1);
+
+    //             glVertex3f(x - k / 2 * SCALE, y + k / 2 * SCALE, 0.1);
+    //             glVertex3f(x + k / 2 * SCALE, y + k / 2 * SCALE, 0.1);
+
+    //             glVertex3f(x + k / 2 * SCALE, y + k / 2 * SCALE, 0.1);
+    //             glVertex3f(x + k / 2 * SCALE, y - k / 2 * SCALE, 0.1);
+
+    //             glVertex3f(x + k / 2 * SCALE, y - k / 2 * SCALE, 0.1);
+    //             glVertex3f(x - k / 2 * SCALE, y - k / 2 * SCALE, 0.1);
+    //         } glEnd();
+    //         break;
+    //     case TREE:
+    //         glColor4f(0, 0, 0, 0);
+    //         glBegin(GL_LINES); {
+    //             glVertex3f(x - (k / 2) * SCALE, y - (k / 2) * SCALE, 0.1);
+    //             glVertex3f(x + (k / 2) * SCALE, y + (k / 2) * SCALE, 0.1);
+
+    //             glVertex3f(x - (k / 2) * SCALE, y + (k / 2) * SCALE, 0.1);
+    //             glVertex3f(x + (k / 2) * SCALE, y - (k / 2) * SCALE, 0.1);
+    //         } glEnd();
+    //         break;
+    // }
 }
 
 void drawBorder() {

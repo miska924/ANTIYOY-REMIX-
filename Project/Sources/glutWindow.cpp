@@ -34,11 +34,14 @@ void Initialize() {
     glOrtho(0.0, SZ, 0.0, SZ, -1.0, 1.0);
     glEnable(GL_DEPTH_TEST);
     glMatrixMode(GL_MODELVIEW);
+
+    // glfwWindowHint(GLFW_SAMPLES, 4);
+    // glEnable(GL_MULTISAMPLE);  
 }
 
 void GlutWindow(int argc, char** argv) {
     glutInit(&argc, argv);
-    glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB | GLUT_DEPTH);
+    glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB | GLUT_DEPTH | GLUT_MULTISAMPLE);
     glutInitWindowSize(WSZ, WSZ);
     glutInitWindowPosition(0, 0);
     glutCreateWindow("PRIVIT");
