@@ -35,23 +35,15 @@ void drawLine(double x0, double y0, double x1, double y1, double color, double z
     } glEnd();
 }
 
-// void drawSquare(double x, double y, double rib) {
-//     glColor4f(1.0, 1.0, 1.0, 1.0);
-//     glBegin(GL_POLYGON); {
-//         glVertex3f(x - rib / 2, y - rib / 2, 0.1);
-//         glVertex3f(x + rib / 2, y - rib / 2, 0.1);
-//         glVertex3f(x + rib / 2, y + rib / 2, 0.1);
-//         glVertex3f(x - rib / 2, y + rib / 2, 0.1);
-//     } glEnd();
-
-//     glColor4f(1.0, 1.0, 1.0, 1.0);
-//     glBegin(GL_POLYGON); {
-//         glVertex3f(x - rib / 2, y - rib / 2, 0.1);
-//         glVertex3f(x + rib / 2, y - rib / 2, 0.1);
-//         glVertex3f(x + rib / 2, y + rib / 2, 0.1);
-//         glVertex3f(x - rib / 2, y + rib / 2, 0.1);
-//     } glEnd();
-// }
+void drawSquare(double x, double y, double rib, double color, double z) {
+    glColor4f(color, color, color, 1.0);
+    glBegin(GL_POLYGON); {
+        glVertex3f(x - rib / 2, y - rib / 2, 0.1);
+        glVertex3f(x + rib / 2, y - rib / 2, 0.1);
+        glVertex3f(x + rib / 2, y + rib / 2, 0.1);
+        glVertex3f(x - rib / 2, y + rib / 2, 0.1);
+    } glEnd();
+}
 
 void drawCrown(double x, double y, double r, double z) {
     glColor4f(1.0, 1.0, 0.0, 1.0);
