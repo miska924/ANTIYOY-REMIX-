@@ -1,6 +1,6 @@
-#ifndef _BUTTON
-#define _BUTTON
+#ifndef _BUTTONS
+#define _BUTTONS
 
 void drawButtons();
 
-#endif // _BUTTON
+#endif // _BUTTONS

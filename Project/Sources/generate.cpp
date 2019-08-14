@@ -143,11 +143,19 @@ void GenerateField() {
     int ok = 0;
     int it = 0;
     int CNT = 2000;
+
+    WHO = 1;
+    MODE = WORLD;
+    
+    for (int i = 0; i < 10; ++i) {
+        buttons[i].item = EMPTY;
+        buttons[i].color = VOID;
+        buttons[i].state = 0;
+    }
+    buttons[9].color = WHO % PLAYERS + 1;
     while ((ok + it * 2 / CNT) < 2 && ++it < CNT) {
         SCALE = 1;
         X0 = Y0 = 0;
-        MOD = WORLD;
-        WHO = 1;
         TMP = 0;
         xl = yl = INF;
         xr = yr = -INF;

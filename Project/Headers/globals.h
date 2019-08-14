@@ -39,7 +39,7 @@ extern int PLAYERS;
 extern int WHO;
 extern int TMP;
 
-extern int MOD;
+extern int MODE;
 
 const int WORLD = 0;
 const int CITY  = 1;
@@ -56,5 +56,10 @@ extern std::vector<std::vector<double> > CL;
 
 extern int DEBUGX;
 extern int DEBUGY;
+
+const int NEXT_TURN = 9;
+const int BUTTONS = 10;
+extern tile buttons[BUTTONS];
+int button();
 
 #endif

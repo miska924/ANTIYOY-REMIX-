@@ -14,7 +14,7 @@ double Y0;
 int FSZ;
 int PLAYERS;
 int WHO;
-int MOD;
+int MODE;
 
 int DEBUGX, DEBUGY;
 
@@ -35,4 +35,18 @@ double getx(int i, int j) {
 
 double gety(int i, int j) {
     return (2.0 * j + double(i) - Y0) * SCALE;
+}
+
+tile buttons[BUTTONS];
+
+int button() {
+    if (MSY > SZ / 10) {
+        return -1;
+    } else {
+        int ans = int(MSX / (SZ / 10));
+        if (ans != NEXT_TURN && MODE == WORLD) {
+            return -1;
+        }
+        return ans;
+    }
 }

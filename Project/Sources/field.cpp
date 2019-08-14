@@ -12,8 +12,10 @@ void drawTile(int i, int j) {
     double y = gety(i, j);
     double r0 = 2.0 / sqrtl(3);
 
-
-    double k = 0.9 + 0.1 * field[i][j].state;
+    double k = 1;
+    if (MSI != i || MSJ != j) {
+        k *= 0.9;
+    }
     // double q = 0.2;
 
     int player = field[i][j].color;

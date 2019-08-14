@@ -10,6 +10,6 @@ Sources/interact.cpp                \
 Sources/field.cpp                   \
 Sources/buttons.cpp                 \
 Sources/info.cpp                    \
--o bin                              \
+-o ../bin                           \
 -I Headers                          \
 -std=c++17 -O3 -Wall -Wextra -L/usr/lib -ljpeg -lGL -lGLU -lglut

@@ -38,27 +38,32 @@ void find_mouse(int x, int y) {
     }
 }
 
-void MouseMove(int x, int y) {
-    field[MSI][MSJ].state = 0;
+void updateMouse(int x, int y) {
     MSX = double(x) / WSZ * SZ;
     MSY = SZ - double(y) / WSZ * SZ;
-    find_mouse(0, 0);
-    field[MSI][MSJ].state = 1;
+    find_mouse(MSI, MSJ);
+}
+
+void MouseMove(int x, int y) {
+    updateMouse(x, y);
 
     string message = string("MouseMove: ") + to_string(MSX) + " " + to_string(MSY);
     glutSetWindowTitle(message.c_str());
 }
 
-void MousePressed(int button, int state, int x, int y) {
+void MousePressed(int but, int state, int x, int y) {
+    updateMouse(x, y);
+
+    if (but == 0 && state == GLUT_DOWN) {
+        if (button() == NEXT_TURN) {
+            WHO = WHO % PLAYERS + 1;
+        }
+    }
     glutSetWindowTitle("MousePressed");
 }
 
 void MousePressedMove(int x, int y) {
-    field[MSI][MSJ].state = 0;
-    MSX = double(x) / WSZ * SZ;
-    MSY = SZ - double(y) / WSZ * SZ;
-    find_mouse(0, 0);
-    field[MSI][MSJ].state = 1;
+    updateMouse(x, y);
 
     string message = string("MouseMove: ") + to_string(MSX) + " " + to_string(MSY);
     glutSetWindowTitle(message.c_str());
