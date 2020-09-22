@@ -1,3 +1,6 @@
+![](demo.png)
+
+
   sudo apt-get install libboost-dev
   
   sudo apt-get install libjpeg-dev
