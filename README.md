@@ -1,20 +1,20 @@
 ![](demo.png)
 
 
-  sudo apt-get install libboost-dev
+     sudo apt-get install libboost-dev
   
-  sudo apt-get install libjpeg-dev
+     sudo apt-get install libjpeg-dev
   
-  sudo add-apt-repository universe
+     sudo add-apt-repository universe
   
-  sudo apt update
+     sudo apt update
   
-  sudo apt install freeglut3-dev
+     sudo apt install freeglut3-dev
   
-  chmod +x build.sh
+     chmod +x build.sh
   
-  ./build.sh
+     ./build.sh
   
-  ./bin
+     ./bin
   
-  200 6
+     200 6
